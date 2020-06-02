@@ -30,16 +30,11 @@ ARTICLES = [
 def calculate_recipients
   # Using the SUBSCRIBERS and UNSUBSCRIBED arrays,
   # write a method that will return an array of only the subscribers who haven't unsubscribed
-  not_unsubscribed = SUBSCRIBERS.map do |subscribed|
-    # binding.pry
-    if subscribed == UNSUBSCRIBED
-      binding.pry
-      not_unsubscribed.delete(UNSUBSCRIBED)
-    end
+  not_unsubscribed = SUBSCRIBERS.reject do |subscribed|
+    UNSUBSCRIBED.include?(subscribed) 
   end
 end
 
-calculate_recipients
 
 def first_n_articles(number_of_articles)
   ARTICLES.first(number_of_articles.to_i)
@@ -49,13 +44,21 @@ def print_recipients
   # Write a method that uses the output of calculate_recipients
   # and returns a list of emails separated by commas
   # Ex) "abc@email.com, def@email.com, ghi@email.com"
+calculate_recipients.join(", ")
 end
+
 
 def print_one_article(article)
   # Write a method that will take an article hash
   # and print the title, author and text as a formatted string
   # See the README/sample output for examples
+binding.pry 
+  article[1] 
+  article[0]
+  article[:text]
+ # binding.pry 
 end
+print_one_article(ARTICLES[0])
 
 def print_many_articles(articles)
   # Write a method that will take in an array of article hashes
