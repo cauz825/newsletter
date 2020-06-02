@@ -67,6 +67,8 @@ def print_many_articles(articles)
     print_one_article(article)
   end
 end
+print_many_articles(ARTICLES)
+
 
 def format_campus_location(campus)
   "Flatiron #{campus[:name]}"
@@ -88,6 +90,7 @@ def print_newsletter(number)
 
   print "RECIPIENTS: "
   print_recipients
+  # binding.pry
 
   puts "\nBODY:"
   format_subject
