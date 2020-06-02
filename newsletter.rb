@@ -52,17 +52,17 @@ def print_one_article(article)
   # Write a method that will take an article hash
   # and print the title, author and text as a formatted string
   # See the README/sample output for examples
-binding.pry 
-  article[1] 
-  article[0]
-  article[:text]
- # binding.pry 
+
+  print article[:title] 
+  print "by: #{article[:author]}"
+  print article[:text]
+
 end
-print_one_article(ARTICLES[0])
 
 def print_many_articles(articles)
   # Write a method that will take in an array of article hashes
   # and format each one using the print_one_article method
+  print_one_article
 end
 
 def format_campus_location(campus)
